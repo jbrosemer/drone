@@ -53,8 +53,8 @@ def accel_sim(steps,repeats,E):
     ax.set_xlim(-lim, lim)
     ax.set_ylim(-lim, lim)
     ax.set_aspect('equal', adjustable='datalim')
-    ell2 = mpatches.Ellipse((0,0), math.sqrt(eigs[0]*5.991)*2, math.sqrt(eigs[1]*5.991)*2, math.atan(eigv[1][0]/eigv[0][0])*180/math.pi,fill=False, edgecolor="red")
-    ax.add_patch(ell2)
+    #ellipse = mpatches.Ellipse((0,0), math.sqrt(eigs[0]*5.991)*2, math.sqrt(eigs[1]*5.991)*2, math.atan(eigv[1][0]/eigv[0][0])*180/math.pi,fill=False, edgecolor="red")
+    #ax.add_patch(ellipse)
     ax.scatter(np.array(poss),np.array(vels), marker=".")
     title = ("Drone velocity vs position t=" + str(N+1))
     plt.title(title)
@@ -91,7 +91,7 @@ A = np.array([[1,1] , [0,1]], float)
 t=0
 #When t=1
 E = R
-N=5
+N=0
 while t <= N:
     t+=1
     E = np.dot(np.dot(A,E),np.transpose(A))+R
